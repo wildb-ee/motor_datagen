@@ -27,7 +27,7 @@ WD = 1e-4
 if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    train_X, train_Y, val_X, val_Y, y_mean, y_std, x_mean, x_std = setup_data(
+    train_X, train_Y, val_X, val_Y, x_mean, x_std = setup_data(
         MT_PATH, SR_PATH, TIME_STEPS, DATA_SPLIT, device=device
     )
 
@@ -111,6 +111,5 @@ sample = sample.unsqueeze(0).to(device)
 model.eval()
 with torch.no_grad():
     pred = model(sample, None)
-    pred = pred * y_std + y_mean
     print("Predicted motor values for a sample sequence:", pred.squeeze(0))
 

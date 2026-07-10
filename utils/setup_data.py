@@ -35,12 +35,6 @@ def setup_data(mtp: str, srp: str, steps: int, split: float, device):
         srnt, [split_idx, srnt.shape[0] - split_idx], dim=0
     )
 
-    y_mean = train_Y.mean(0, keepdim=True)
-    y_std = train_Y.std(0, keepdim=True)
-
-    train_Y = (train_Y - y_mean) / y_std
-    val_Y = (val_Y - y_mean) / y_std
-
     srnt_mean = train_srnt.mean(dim=0, keepdim=True)
     srnt_std = train_srnt.std(dim=0, keepdim=True)
     train_srnt = (train_srnt - srnt_mean) / srnt_std
@@ -58,4 +52,4 @@ def setup_data(mtp: str, srp: str, steps: int, split: float, device):
     train_X = train_X.view(train_X.shape[0], steps + 1, -1).flip(1)
     val_X = val_X.view(val_X.shape[0], steps + 1, -1).flip(1)
 
-    return (train_X, train_Y, val_X, val_Y, y_mean, y_std, srnt_mean, srnt_std)
+    return (train_X, train_Y, val_X, val_Y, srnt_mean, srnt_std)
