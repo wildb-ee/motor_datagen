@@ -4,7 +4,7 @@
 (*max limits may be adjusted accordingly*)
 - sin movement of various combinations & data collection (*plot+txt*)
 - mlp trained to have xyz& prev_points' xyz as inputs and motor_deg as outputs 
-
+- lstm added ;(
 ## Performance
 ![Project Screenshot](overall.png)
 

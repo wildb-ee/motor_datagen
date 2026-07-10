@@ -4,6 +4,7 @@ import math
 import random
 import matplotlib.pyplot as plt
 from dynamixel_sdk import *
+# TODO: make random time intervals, slightly random movements 
 
 DEVICE_NAME = "/dev/ttyUSB0"
 PROTOCOL_VERSION = 2.0
