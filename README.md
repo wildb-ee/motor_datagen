@@ -6,8 +6,8 @@
 - mlp trained to have xyz& prev_points' xyz as inputs and motor_deg as outputs 
 - lstm added ;(
 ## Performance
-![Project Screenshot](overall.png)
-
+![Project Screenshot](mlp_metrics.png)
+![Project Screenshot](lstm_metrics.png)
 ## Etc
 *notes*:
 - *for my dataset based on optitrack rpy as input did not improve performance, though it might for many trajectories/slightly different steel script*
